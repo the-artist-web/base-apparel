@@ -1,0 +1,306 @@
+/*-------------------------------*\
+  #ROOT
+\*-------------------------------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+:root {
+  /**
+   * Colors
+   */
+
+  /* Primary */
+  --Desaturated-Red: hsl(0, 36%, 70%);
+  --Soft-Red: hsl(0, 93%, 68%);
+
+  /* Neutral */
+  --Dark-Grayish-Red: hsl(0, 6%, 24%);
+  
+  /* Gradients */
+  --Linear-135deg-from1: linear-gradient(135deg, hsl(0, 0%, 100%) 0%, hsl(0, 100%, 98%) 50%);
+  --Linear-135deg-from2: linear-gradient(135deg, hsl(0, 80%, 86%) 0%, hsl(0, 74%, 74%) 50%);
+
+  /**
+   * Typography
+   */
+
+  /* Body Copy */
+  --Font-size: 16px;
+
+  /* Font Family */
+  --font-family: "Josefin Sans", sans-serif;
+}
+
+/*-------------------------------*\
+  #RESET
+\*-------------------------------*/
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a,
+img,
+input,
+button { display: block; }
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img { height: auto; }
+
+input,
+button {
+  background: none;
+  border: none;
+}
+
+input {
+  outline: none;
+  width: 100%;
+}
+
+button { cursor: pointer; }
+
+html {
+  scroll-behavior: smooth;
+  font-size: var(--Font-size);
+}
+
+body {
+  background: var(--Linear-135deg-from1);
+  font-family: var(--font-family);
+  color: var(--Dark-Grayish-Red);
+}
+
+::selection {
+  background-color: var(--Soft-Red);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  background: var(--Linear-135deg-from1);
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--Linear-135deg-from2);
+  border-radius: 4px;
+}
+
+/*-------------------------------*\
+  #DUPLICATE ITEM
+\*-------------------------------*/
+
+.section { padding-block: 100px; }
+
+.container { padding-inline: 30px; }
+
+.img-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/*-------------------------------*\
+  #COMONENT
+\*-------------------------------*/
+
+/**
+ * btn
+ */
+
+.base-apparel .base-apparel-content .container .form .input-box .submit {
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-radius: 100px;
+  height: 60px;
+  width: 70px;
+  display: grid;
+  place-items: center;
+  background: var(--Linear-135deg-from2);
+  box-shadow: 5px 10px 20px 3px hsl(0, 80%, 86%);
+  transition: .4s;
+}
+
+.base-apparel .base-apparel-content .container .form .input-box .submit:hover {
+  background: linear-gradient(90deg, hsl(0, 80%, 86%) 90%, hsl(0, 74%, 74%) 100%);
+  box-shadow: 5px 10px 20px 10px hsl(0, 80%, 86%);
+  transition: .4s;
+}
+
+/*-------------------------------*\
+  #HEADER
+\*-------------------------------*/
+
+.header {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: .4s;
+}
+
+/*-------------------------------*\
+  #HERO
+\*-------------------------------*/
+
+.base-apparel {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 50px;
+  width: 100%;
+  height: auto;
+}
+
+.base-apparel figure .hero-desktop { display: none; }
+
+.base-apparel figure .hero-mobile { 
+  display: block;
+  margin-top: 100px; 
+}
+
+.base-apparel .base-apparel-content .container {
+  text-align: center;
+  display: grid;
+  gap: 30px;
+}
+
+.base-apparel .base-apparel-content .container h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  line-height: 1.1;
+}
+
+.base-apparel .base-apparel-content .container h1 span {
+  font-weight: 300;
+  color: var(--Desaturated-Red);
+}
+
+.base-apparel .base-apparel-content .container p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  color: var(--Desaturated-Red);
+}
+
+.base-apparel .base-apparel-content .container .form .input-box { position: relative; }
+
+.base-apparel .base-apparel-content .container .form .input-box .input-email {
+  border: 1px solid var(--Desaturated-Red);
+  height: 60px;
+  padding: 15px 28px;
+  border-radius: 100px;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.base-apparel .base-apparel-content .container .form .input-box .input-email.active { border: 3px solid var(--Soft-Red); }
+
+.base-apparel .base-apparel-content .container .form .input-box .input-email::placeholder { color: var(--Desaturated-Red); }
+
+.base-apparel .base-apparel-content .container .form .input-box .icon-error {
+  transform: translateY(-50%);
+  position: absolute;
+  top: 50%;
+  right: 85px;
+  display: none;
+}
+
+.base-apparel .base-apparel-content .container .form .input-box .icon-error.active { display: grid; }
+
+.base-apparel .base-apparel-content .container .form .error-text {
+  text-align: left;
+  color: var(--Soft-Red);
+  margin: 10px 30px;
+  display: none;
+}
+
+.base-apparel .base-apparel-content .container .form .error-text.active { display: block; }
+
+/*-------------------------------*\
+  #MEDIA
+\*-------------------------------*/
+
+/**
+ * responsive for larger than 768px secreen
+ */
+@media (min-width: 768px) {
+  /* #DUPLICATE ITEM */
+  .container { padding-inline: 10%; }
+
+  /* #HERO */
+  .base-apparel .base-apparel-content .container h1 { font-size: 4rem; }
+}
+
+/**
+ * responsive for larger than 992px secreen
+ */
+@media (min-width: 992px) {
+  /* #DUPLICATE ITEM */
+  .container { padding-inline: 15%; }
+
+  /* #HERO */
+  .base-apparel .base-apparel-content .container h1 { 
+    font-size: 5rem; 
+    font-weight: 500;
+  }
+}
+
+/**
+ * responsive for larger than 1200px secreen
+ */
+@media (min-width: 1200px) {
+  /* #DUPLICATE ITEM */
+  .container { padding-inline: 10%; }
+
+  /* #HEADER */
+  .header { height: 150px; }
+
+  /* #HERO */
+  .base-apparel {
+    background-image: url(../images/bg-pattern-desktop.svg);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-x: hidden;
+    height: 100vh;
+    gap: 10px;
+  }
+  .base-apparel figure .hero-desktop { 
+    display: grid;
+    width: 100%;
+    height: 100vh;
+    grid-column: 2/-1;
+  }
+  .base-apparel .base-apparel-content .container { text-align: left; }
+
+  .base-apparel .base-apparel-content { 
+    width: 670px; 
+    margin-left: 5.5%;
+  }
+
+  .base-apparel figure .hero-mobile { display: none; }
+
+  .base-apparel .base-apparel-content .container .form .input-box .submit { width: 110px; }
+
+  .base-apparel .base-apparel-content .container .form .input-box .icon-error { right: 120px; }
+}
